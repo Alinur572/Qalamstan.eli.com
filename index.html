@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qalamstan | Ресми сайты</title>
+    <style>
+        /* 1. CSS СТИЛЬДЕРІ */
+        :root {
+            --primary-purple: #8e44ad;
+            --dark-purple: #5e2a77;
+            --gold: #f1c40f;
+            --white: #ffffff;
+            --sky-blue: #4aa3df;
+            --grass-green: #2ecc71;
+            --pixel-border: 4px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--sky-blue);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* МАЙНКРАФТ СТИЛЬДЕГІ ФОН */
+        .minecraft-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to bottom, #4aa3df 0%, #a1d8ff 70%, #2ecc71 70%, #27ae60 100%);
+            background-size: 100% 100%;
+        }
+
+        /* Бұлттар анимациясы */
+        .cloud {
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            background: white;
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+            animation: moveClouds 25s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes moveClouds {
+            from { left: -150px; }
+            to { left: 110%; }
+        }
+
+        /* Негізгі блок */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ту анимациясы */
+        .flag-container {
+            width: 120px;
+            height: 80px;
+            background-color: #ff00ff;
+            border: var(--pixel-border) solid #000;
+            position: relative;
+            margin-bottom: 20px;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.3);
+            animation: wave 3s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flag-logo {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-weight: bold;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: skewY(0deg) translateY(0); }
+            50% { transform: skewY(5deg) translateY(-10px); }
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: var(--gold);
+            text-shadow: 5px 5px 0px #000;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .helper-text {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 20px;
+            border-radius: 4px;
+            border-bottom: 4px solid rgba(0,0,0,0.3);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .president-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            margin-bottom: 35px;
+            padding: 10px 20px;
+            background: rgba(0,0,0,0.3);
+            border: 3px solid var(--gold);
+            transition: 0.3s;
+        }
+
+        .president-link:hover {
+            background: var(--gold);
+            color: black;
+            transform: scale(1.05);
+        }
+
+        /* Түймелер жиынтығы */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--dark-purple);
+            padding: 25px;
+            border: var(--pixel-border) solid var(--gold);
+            border-bottom-width: 8px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-align: center;
+        }
+
+        .card:active {
+            transform: translateY(4px);
+            border-bottom-width: 4px;
+        }
+
+        .card:hover {
+            background: var(--primary-purple);
+            box-shadow: 0 0 15px var(--gold);
+        }
+
+        .card-sub {
+            font-size: 0.85rem;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+
+        footer {
+            padding: 20px;
+            background: #1b1b1b;
+            font-size: 0.9rem;
+            border-top: 4px solid #000;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .links-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="minecraft-bg">
+        <div class="cloud" style="top: 10%; animation-delay: 0s;"></div>
+        <div class="cloud" style="top: 25%; animation-delay: -5s; width: 120px;"></div>
+        <div class="cloud" style="top: 15%; animation-delay: -12s;"></div>
+    </div>
+
+    <section class="hero">
+        <div class="flag-container">
+            <div class="flag-logo">✎</div>
+        </div>
+
+        <div class="helper-text">@qalamstan_kz — бұл көмекші</div>
+
+        <h1>QALAMSTAN</h1>
+        
+        <a href="https://t.me/NurlanQalam" class="president-link" target="_blank">
+            Президент: <strong>Nurlan Qalam</strong>
+        </a>
+
+        <div class="links-grid">
+            <a href="https://t.me/Qalamstan_bot" class="card" target="_blank">
+                <span>🤖 Ресми Бот</span>
+                <span class="card-sub">@Qalamstan_bot</span>
+            </a>
+
+            <a href="https://t.me/qalamstan_kz" class="card" target="_blank">
+                <span>📢 Telegram Канал</span>
+                <span class="card-sub">Жаңалықтар мен көмекші</span>
+            </a>
+
+            <a href="https://youtube.com/@nurlanqalam?si=HGJiCzWGe5wrSJPG" class="card" target="_blank">
+                <span>🎥 YouTube Канал</span>
+                <span class="card-sub">Негізгі арна</span>
+            </a>
+
+            <a href="https://youtube.com/@qalamgo?si=lsLfvhRLykFuS0ne" class="card" target="_blank">
+                <span>🎮 Қалам Го</span>
+                <span class="card-sub">Екінші арна</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Qalamstan Елі. Барлық құқықтар қорғалған.
+    </footer>
+
+</body>
+</html>
